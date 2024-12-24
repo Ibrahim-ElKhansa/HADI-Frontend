@@ -34,6 +34,18 @@ body {
   &__title {
     padding: 0px 20px;
     text-align: center;
+    margin: 10px 0;
+    font-size: 3rem;
+  }
+
+  &__sub-title {
+    padding: 0px 20px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  &__image-container {
+    margin: 10px 0;
   }
 
   @media (max-width: 768px) {
