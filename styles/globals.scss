@@ -43,14 +43,4 @@ body {
     text-align: center;
     font-size: 1.5rem;
   }
-
-  &__image-container {
-    margin: 10px 0;
-  }
-
-  @media (max-width: 768px) {
-    &__image-container {
-      display: none;
-    }
-  }
 }
