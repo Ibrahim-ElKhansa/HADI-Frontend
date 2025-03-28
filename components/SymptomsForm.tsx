@@ -324,9 +324,9 @@ export default function SymptomsForm() {
               <strong>Remedies:</strong> {prognosesData[finalPrognosis]?.remedies?.join(", ")}
             </p>
           </div>
-          <button className="form__check-prices" onClick={handleCheckPrices} disabled={checkingPrices}>
+          {false && <button className="form__check-prices" onClick={handleCheckPrices} disabled={checkingPrices}>
             {checkingPrices ? <CircularProgress size={16} color="inherit" /> : "Check for Prices"}
-          </button>
+          </button>}
           {medicationPrices && medicationPrices.length > 0 && (
             <div className="form__prices">
               <h4>Medication Prices:</h4>

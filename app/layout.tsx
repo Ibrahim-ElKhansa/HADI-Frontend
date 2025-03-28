@@ -9,7 +9,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "HADI",
+  title: "HADI | Health and Disease Identification",
   description: "Health and Disease Identification",
 };
 

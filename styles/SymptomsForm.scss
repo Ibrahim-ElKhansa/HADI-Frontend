@@ -1,11 +1,9 @@
 .form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 20px;
-  width: 95%;
+  width: 100%;
 
   &__symptoms-selector {
     display: flex;
@@ -15,12 +13,11 @@
 
   &__unselected-symptoms,
   &__selected-symptoms {
-    flex: 1;
     background-color: #ffffff;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2), 0px -4px 12px rgba(0, 0, 0, 0.1), 4px 0px 12px rgba(0, 0, 0, 0.1), -4px 0px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 90%;
+    padding: 20px;
   }
 
   &__unselected-symptoms {
@@ -31,7 +28,7 @@
   &__title {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: black
   }
 
@@ -50,7 +47,6 @@
   }
 
   &__submit {
-    margin-top: 20px;
     padding: 10px 20px;
     background-color: #14cf7b;
     color: white;
@@ -59,8 +55,8 @@
     cursor: pointer;
     font-size: 16px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2), 0px -4px 12px rgba(0, 0, 0, 0.1), 4px 0px 12px rgba(0, 0, 0, 0.1), -4px 0px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 90%;
 
     &:hover {
       background-color: #1ab36e;
@@ -81,16 +77,8 @@
     color: black
   }
 
-  &__prognoses {
-    width: 100%;
-  }
-
-  &__final-prognosis {
-    width: 100%;
-  }
-
-  &__next-symptom {
-    width: 100%;
+  &__prognoses, &__final-prognosis, &__next-symptom {
+    width: 90%;
   }
 
   &__confirm-button {
@@ -161,15 +149,6 @@
           color: #333;
         }
       }
-    }
-  }
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-
-    &__unselected-symptoms,
-    &__selected-symptoms {
-      width: 100%;
     }
   }
 }
