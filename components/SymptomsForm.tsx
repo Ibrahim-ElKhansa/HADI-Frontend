@@ -148,7 +148,7 @@ const symptomsList = [
   "yellow_crust_ooze",
 ].sort((a, b) => a.localeCompare(b));
 
-const confidenceLevel = 95;
+const confidenceLevel = 80;
 
 export default function SymptomsForm() {
   const [selectedSymptoms, setSelectedSymptoms] = useState<{ name: string; state: "maybe" | "yes" | "no" }[]>([]);

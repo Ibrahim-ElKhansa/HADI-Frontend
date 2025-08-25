@@ -29,6 +29,7 @@ export default function Symptom({
         {state !== "not_selected" && <button
           className="symptom__button symptom__button--remove"
           onClick={onRemove}
+          title="Remove symptom"
         >
           Remove
         </button>}
@@ -36,6 +37,7 @@ export default function Symptom({
           <button
             className="symptom__button symptom__button--yes"
             onClick={onSelectYes}
+            title="I definitely have this symptom"
           >
             Yes
           </button>
@@ -44,6 +46,7 @@ export default function Symptom({
           <button
             className="symptom__button symptom__button--maybe"
             onClick={onSelectMaybe}
+            title="I might have this symptom"
           >
             Maybe
           </button>
