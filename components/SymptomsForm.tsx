@@ -157,8 +157,6 @@ export default function SymptomsForm() {
   const [nextSymptom, setNextSymptom] = useState<string | null>(null);
   const [finalPrognosis, setFinalPrognosis] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [medicationPrices, setMedicationPrices] = useState<{ name: string; type: string; price: string }[]>([]);
-  const [checkingPrices, setCheckingPrices] = useState(false);
 
   useEffect(() => {
     if (nextSymptom && selectedSymptoms.some((s) => s.name === nextSymptom)) {
@@ -243,25 +241,6 @@ export default function SymptomsForm() {
     return !selectedSymptoms.some((s) => s.name === symptom) && normalizedSymptom.includes(normalizedSearchTerm);
   });
 
-  const handleCheckPrices = async () => {
-    if (!finalPrognosis || !prognosesData[finalPrognosis]?.medications) return;
-
-    const medications = prognosesData[finalPrognosis].medications;
-    setCheckingPrices(true);
-    setMedicationPrices([]);
-
-    try {
-      const response = await axios.post("/api/check-prices", { medications });
-
-      const pricesData = response.data.prices || [];
-      setMedicationPrices(pricesData);
-    } catch (error) {
-      console.error("Error fetching prices:", error);
-    } finally {
-      setCheckingPrices(false);
-    }
-  };
-
   return (
     <div className="form">
       <div className="form__unselected-symptoms">
@@ -324,21 +303,6 @@ export default function SymptomsForm() {
               <strong>Remedies:</strong> {prognosesData[finalPrognosis]?.remedies?.join(", ")}
             </p>
           </div>
-          {false && <button className="form__check-prices" onClick={handleCheckPrices} disabled={checkingPrices}>
-            {checkingPrices ? <CircularProgress size={16} color="inherit" /> : "Check for Prices"}
-          </button>}
-          {medicationPrices && medicationPrices.length > 0 && (
-            <div className="form__prices">
-              <h4>Medication Prices:</h4>
-              <ul>
-                {medicationPrices.map((med: { name: string; type: string; price: string }) => (
-                  <li key={med.name}>
-                    <strong>{med.name}</strong> ({med.type}): {med.price}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
       ) : (
         nextSymptom && (

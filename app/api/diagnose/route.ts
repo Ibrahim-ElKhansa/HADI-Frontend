@@ -4,7 +4,7 @@ export async function POST(request: Request) {
   try {
     const payload = await request.json();
 
-    const res = await fetch("https://eece-490-akinator-doctor.fly.dev/diagnose", {
+    const res = await fetch("https://hadi-backend.fly.dev/diagnose", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
