@@ -14,7 +14,9 @@ export default function Home() {
       </div>
       <SymptomsForm />
       <footer className="main__footer">
-        <p>A project by Ibrahim El Khansa</p>
+        <p>
+          A project by <a href="https://ibrahimelkhansa.com">Ibrahim El Khansa</a>
+        </p>
       </footer>
     </main>
   );
